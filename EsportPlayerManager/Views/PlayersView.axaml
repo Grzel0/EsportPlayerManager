@@ -2,7 +2,36 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:EsportPlayerManager.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="EsportPlayerManager.Views.PlayersView">
-    Welcome to Avalonia!
+    
+    <UserControl.DataContext>
+        <vm:PlayerViewModel />
+    </UserControl.DataContext>
+    
+    <StackPanel Margin="20">
+        <TextBlock Text="Lista Graczy" FontSize="20" FontWeight="Bold" Margin="0,0,0,10"></TextBlock>
+        <ListBox Items="{Binding Players}" Height="300">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="1" BorderBrush="Gray" Padding="5" Margin="0,0,0,5">
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <TextBlock Text="{Binding Nickname}" FontWeight="bold"/>
+                            <TextBlock Text="("/>
+                            <TextBlock Text="{Binding Game}"/>
+                            <TextBlock Text=") Skill: "/>
+                            <TextBlock Text="{Binding SkillLevel}"/>
+                            <TextBlock Text="Stress: " Foreground="Red"/>
+                            <TextBlock Text="{Binding StressLevel}" Foreground="Red"/>
+                            <TextBlock Text="Fatigue: " Foreground="Orange"/>
+                            <TextBlock Text="{Binding FatigueLevel}" Foreground="Orange"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+        <Button Content="Dodaj nowego Gracza" Command="{Binding AddPlayerCommand}" Margin="0,10,0,0" HorizontalAlignment="Left"/> 
+    </StackPanel>
 </UserControl>

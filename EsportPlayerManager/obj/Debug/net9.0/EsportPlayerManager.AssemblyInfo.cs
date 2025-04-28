@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EsportPlayerManager")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c454071d0fa9a2a19846e75eec04eedbfc14cd76")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4606007ba561d64f45a92fdd8ccfa01313b3feff")]
 [assembly: System.Reflection.AssemblyProductAttribute("EsportPlayerManager")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EsportPlayerManager")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
