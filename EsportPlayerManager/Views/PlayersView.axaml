@@ -5,7 +5,8 @@
              xmlns:vm="using:EsportPlayerManager.ViewModels"
              xmlns:global="clr-namespace:"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="EsportPlayerManager.Views.PlayersView">
+             x:Class="EsportPlayerManager.Views.PlayersView"
+             x:DataType="global:PlayerViewModel">
     
     <UserControl.DataContext>
         <global:PlayerViewModel />
@@ -13,7 +14,7 @@
     
     <StackPanel Margin="20">
         <TextBlock Text="Lista Graczy" FontSize="20" FontWeight="Bold" Margin="0,0,0,10"></TextBlock>
-        <ListBox Items="{Binding Players}">
+        <ListBox ItemsSource="{Binding Players}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" Spacing="10">

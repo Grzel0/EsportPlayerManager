@@ -10,5 +10,5 @@ public class EsportManagerDbContext : DbContext
     public DbSet<Tournament> Tournaments { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
-        => options.UseNpgsql("Host=localhost;Database=EsportManager;Username=postgres;Password=haslo123");
+        => options.UseNpgsql("Host=localhost;Database=postgres;Username=postgres;Password=haslo123");
 }
