@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/iv_tie/RiderProjects/EsportPlayerManager/EsportPlayerManager/EsportPlayerManager.csproj": {}
+    "C:\\Users\\ggejl\\RiderProjects\\EsportPlayerManager\\EsportPlayerManager\\EsportPlayerManager.csproj": {}
   },
   "projects": {
-    "/home/iv_tie/RiderProjects/EsportPlayerManager/EsportPlayerManager/EsportPlayerManager.csproj": {
+    "C:\\Users\\ggejl\\RiderProjects\\EsportPlayerManager\\EsportPlayerManager\\EsportPlayerManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/iv_tie/RiderProjects/EsportPlayerManager/EsportPlayerManager/EsportPlayerManager.csproj",
+        "projectUniqueName": "C:\\Users\\ggejl\\RiderProjects\\EsportPlayerManager\\EsportPlayerManager\\EsportPlayerManager.csproj",
         "projectName": "EsportPlayerManager",
-        "projectPath": "/home/iv_tie/RiderProjects/EsportPlayerManager/EsportPlayerManager/EsportPlayerManager.csproj",
-        "packagesPath": "/home/iv_tie/.nuget/packages/",
-        "outputPath": "/home/iv_tie/RiderProjects/EsportPlayerManager/EsportPlayerManager/obj/",
+        "projectPath": "C:\\Users\\ggejl\\RiderProjects\\EsportPlayerManager\\EsportPlayerManager\\EsportPlayerManager.csproj",
+        "packagesPath": "C:\\Users\\ggejl\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ggejl\\RiderProjects\\EsportPlayerManager\\EsportPlayerManager\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/iv_tie/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\ggejl\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -36,9 +36,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -67,6 +67,14 @@
             "CommunityToolkit.Mvvm": {
               "target": "Package",
               "version": "[8.2.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.4, )"
             }
           },
           "imports": [
@@ -85,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/iv_tie/.dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
