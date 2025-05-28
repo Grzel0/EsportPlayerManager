@@ -3,31 +3,26 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="using:EsportPlayerManager.ViewModels"
+             xmlns:global="clr-namespace:"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="EsportPlayerManager.Views.PlayersView">
     
     <UserControl.DataContext>
-        <vm:PlayerViewModel />
+        <global:PlayerViewModel />
     </UserControl.DataContext>
     
     <StackPanel Margin="20">
         <TextBlock Text="Lista Graczy" FontSize="20" FontWeight="Bold" Margin="0,0,0,10"></TextBlock>
-        <ListBox Items="{Binding Players}" Height="300">
+        <ListBox Items="{Binding Players}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderThickness="1" BorderBrush="Gray" Padding="5" Margin="0,0,0,5">
-                        <StackPanel Orientation="Horizontal" Spacing="10">
-                            <TextBlock Text="{Binding Nickname}" FontWeight="bold"/>
-                            <TextBlock Text="("/>
-                            <TextBlock Text="{Binding Game}"/>
-                            <TextBlock Text=") Skill: "/>
-                            <TextBlock Text="{Binding SkillLevel}"/>
-                            <TextBlock Text="Stress: " Foreground="Red"/>
-                            <TextBlock Text="{Binding StressLevel}" Foreground="Red"/>
-                            <TextBlock Text="Fatigue: " Foreground="Orange"/>
-                            <TextBlock Text="{Binding FatigueLevel}" Foreground="Orange"/>
-                        </StackPanel>
-                    </Border>
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                        <TextBlock Text="{Binding Path=Nickname}" FontWeight="Bold" />
+                        <TextBlock Text=" ("/><TextBlock Text="{Binding Path=Game}" /><TextBlock Text=") " />
+                        <TextBlock Text="Skill: "/><TextBlock Text="{Binding Path=SkillLevel}" />
+                        <TextBlock Text=" Stress: "/><TextBlock Text="{Binding Path=StressLevel}" Foreground="Red" />
+                        <TextBlock Text=" Fatigue: "/><TextBlock Text="{Binding Path=FatigueLevel}" Foreground="Orange" />
+                    </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
