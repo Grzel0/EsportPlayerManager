@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qJbEIQ758KE=",
+  "dgSpecHash": "/WtGY9WI0UM=",
   "success": true,
   "projectFilePath": "C:\\Users\\ggejl\\RiderProjects\\EsportPlayerManager\\EsportPlayerManager\\EsportPlayerManager.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "C:\\Users\\ggejl\\.nuget\\packages\\avalonia.fonts.inter\\11.1.0\\avalonia.fonts.inter.11.1.0.nupkg.sha512",
     "C:\\Users\\ggejl\\.nuget\\packages\\avalonia.freedesktop\\11.1.0\\avalonia.freedesktop.11.1.0.nupkg.sha512",
     "C:\\Users\\ggejl\\.nuget\\packages\\avalonia.native\\11.1.0\\avalonia.native.11.1.0.nupkg.sha512",
+    "C:\\Users\\ggejl\\.nuget\\packages\\avalonia.reactiveui\\11.0.6\\avalonia.reactiveui.11.0.6.nupkg.sha512",
     "C:\\Users\\ggejl\\.nuget\\packages\\avalonia.remote.protocol\\11.1.0\\avalonia.remote.protocol.11.1.0.nupkg.sha512",
     "C:\\Users\\ggejl\\.nuget\\packages\\avalonia.skia\\11.1.0\\avalonia.skia.11.1.0.nupkg.sha512",
     "C:\\Users\\ggejl\\.nuget\\packages\\avalonia.themes.fluent\\11.1.0\\avalonia.themes.fluent.11.1.0.nupkg.sha512",

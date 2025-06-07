@@ -1,74 +1,62 @@
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using Avalonia.Threading;
 using ReactiveUI;
+using System.Reactive;
 using EsportPlayerManager.Models;
 using EsportPlayerManager.Data;
-using System.Reactive;
+using System.Reactive.Linq;
+using System.Threading.Tasks;
 
-namespace EsportPlayerManager.ViewModels
+namespace EsportPlayerManager.ViewModels;
+
+public class PlayerViewModel : ReactiveObject
 {
-    public class PlayerViewModel : INotifyPropertyChanged
+    private readonly EsportManagerDbContext _context;
+
+    public ObservableCollection<Player> Players { get; } = new();
+
+    private Player _newPlayer;
+    public Player NewPlayer
     {
-        private readonly EsportManagerDbContext _context;
-        private ObservableCollection<Player> _players;
-        private Player _newPlayer;
+        get => _newPlayer;
+        set => this.RaiseAndSetIfChanged(ref _newPlayer, value);
+    }
 
-        public ObservableCollection<Player> Players
+    public ReactiveCommand<Unit, Unit> AddPlayerCommand { get; }
+
+    public PlayerViewModel()
+    {
+        _context = new EsportManagerDbContext();
+
+        foreach (var player in _context.Players)
+            Players.Add(player);
+
+        ResetNewPlayer();
+
+        AddPlayerCommand = ReactiveCommand.CreateFromTask(AddPlayerAsync, outputScheduler: RxApp.MainThreadScheduler);
+    }
+
+    private async Task AddPlayerAsync()
+    {
+        var player = NewPlayer;
+
+        _context.Players.Add(player);
+        await _context.SaveChangesAsync();
+
+        Players.Add(player);
+
+        ResetNewPlayer();
+    }
+
+    private void ResetNewPlayer()
+    {
+        NewPlayer = new Player
         {
-            get => _players;
-            set { _players = value; OnPropertyChanged(); }
-        }
-
-        public Player NewPlayer
-        {
-            get => _newPlayer;
-            set { _newPlayer = value; OnPropertyChanged(); }
-        }
-
-        public ReactiveCommand<Unit, Unit> AddPlayerCommand { get; }
-
-        public PlayerViewModel()
-        {
-            _context = new EsportManagerDbContext();
-            Players = new ObservableCollection<Player>(_context.Players);
-            
-            ResetNewPlayer();
-
-            AddPlayerCommand = ReactiveCommand.Create(AddPlayer);
-        }
-
-        private void ResetNewPlayer()
-        {
-            NewPlayer = new Player
-            {
-                Name = string.Empty,
-                Nickname = string.Empty,
-                Game = string.Empty,
-                Aim = 0,
-                Strategy = 0,
-                Reflex = 0,
-                StressLevel = 0,
-                FatigueLevel = 0,
-                Experience = 0,
-                RankingPoints = 0,
-                Money = 0
-            };
-        }
-
-        private void AddPlayer()
-        {
-            _context.Players.Add(NewPlayer);
-            _context.SaveChanges();
-
-            Dispatcher.UIThread.Post(() => Players.Add(NewPlayer));
-
-            ResetNewPlayer();
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string name = "") =>
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+            Name = "",
+            Nickname = "",
+            Game = "",
+            SkillLevel = 0,
+            StressLevel = 0,
+            FatigueLevel = 0,
+        };
     }
 }

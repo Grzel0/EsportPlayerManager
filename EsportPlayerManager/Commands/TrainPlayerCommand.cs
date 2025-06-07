@@ -19,9 +19,7 @@ public class TrainPlayerCommand
         if (player == null || training == null)
             return;
 
-        player.Aim += training.SkillIncrease;
-        player.Strategy += training.SkillIncrease;
-        player.Reflex += training.SkillIncrease;
+        player.SkillLevel += training.SkillIncrease;
         player.FatigueLevel += training.FatigueIncrease;
         player.StressLevel += training.StressIncrease;
 

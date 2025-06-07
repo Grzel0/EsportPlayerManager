@@ -16,9 +16,11 @@
         <ListBox ItemsSource="{Binding Tournaments}" Height="300">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal" Spacing="10">
-                        <TextBlock Text="{Binding Name}" />
-                        <TextBlock Text=", wpisowe: {Binding EntryFee}, nagroda: {Binding PrizePool}" />
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Name}"/><TextBlock Text=":" Margin="0, 0, 10, 0"/>
+                        <TextBlock Text="EntryFee: "/><TextBlock Text="{Binding EntryFee}" Margin="0, 0, 10, 0"/>
+                        <TextBlock Text="| MinSkillRequired: "/><TextBlock Text="{Binding MinSkillRequired}" Margin="0, 0, 10, 0"/>
+                        <TextBlock Text="| PrizePool: "/><TextBlock Text="{Binding PrizePool}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
