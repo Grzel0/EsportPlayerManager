@@ -11,12 +11,13 @@
     </UserControl.DataContext>
 
     <StackPanel Margin="10">
-        <TextBlock Text="Treningi" FontSize="20" FontWeight="Bold" Margin="0,0,0,10" />
+        <TextBlock Text="Trainings" FontSize="20" FontWeight="Bold" Margin="0,0,0,10" />
 
         <ListBox ItemsSource="{Binding Trainings}" Height="300">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Id}" Margin="0, 0, 10, 0"/>
                         <TextBlock Text="{Binding Type}"/> <TextBlock Text=":" Margin="0, 0, 10, 0"/>
                         <TextBlock Text="{Binding SkillIncrease}" /><TextBlock Text="+Skill" Margin="0, 0, 10, 0"/>
                         <TextBlock Text="| "/><TextBlock Text="{Binding FatigueIncrease}" /><TextBlock Text="+Fatigue"/>
@@ -24,5 +25,10 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <StackPanel Orientation="Horizontal" Margin="0, 50, 0, 0">
+            <TextBlock Text="Enter player ID" Padding="0, 7, 0, 0"/><TextBox Margin="5, 0, 10, 0" Width="50" Text="{Binding PlayerId, Mode=TwoWay}"/>
+            <TextBlock Text="Enter training ID" Padding="0, 7, 0, 0"/><TextBox Margin="5, 0, 10, 0" Width="50" Text="{Binding TrainingId, Mode=TwoWay}"/>
+            <Button Content="Start player training" Margin="10,0,0,0" Command="{Binding TrainPlayerCommand}"></Button>
+        </StackPanel>
     </StackPanel>
 </UserControl>

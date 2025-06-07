@@ -11,13 +11,13 @@
         Title="EsportPlayerManager">
 
     <TabControl>
-        <TabItem Header="Gracze">
+        <TabItem Header="Players">
             <views:PlayersView />
         </TabItem>
-        <TabItem Header="Treningi">
+        <TabItem Header="Trainings">
             <views:TrainingView />
         </TabItem>
-        <TabItem Header="Turnieje">
+        <TabItem Header="Tournaments">
             <views:TournametsView />
         </TabItem>
     </TabControl>

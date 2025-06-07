@@ -11,12 +11,13 @@
     </UserControl.DataContext>
 
     <StackPanel Margin="10">
-        <TextBlock Text="Turnieje" FontSize="20" FontWeight="Bold" Margin="0,0,0,10" />
+        <TextBlock Text="Tournaments" FontSize="20" FontWeight="Bold" Margin="0,0,0,10" />
 
         <ListBox ItemsSource="{Binding Tournaments}" Height="300">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Id}" Margin="0, 0, 10, 0"/>
                         <TextBlock Text="{Binding Name}"/><TextBlock Text=":" Margin="0, 0, 10, 0"/>
                         <TextBlock Text="EntryFee: "/><TextBlock Text="{Binding EntryFee}" Margin="0, 0, 10, 0"/>
                         <TextBlock Text="| MinSkillRequired: "/><TextBlock Text="{Binding MinSkillRequired}" Margin="0, 0, 10, 0"/>
@@ -25,5 +26,10 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <StackPanel Orientation="Horizontal" Margin="0, 50, 0, 0">
+            <TextBlock Text="Enter player ID" Padding="0, 7, 0, 0"/><TextBox Margin="5, 0, 10, 0" Width="50"/>
+            <TextBlock Text="Enter tournament ID" Padding="0, 7, 0, 0"/><TextBox Margin="5, 0, 10, 0" Width="50"/>
+            <Button Content="Sign up player for tournament" Margin="10,0,0,0"></Button>
+        </StackPanel>
     </StackPanel>
 </UserControl>

@@ -21,7 +21,6 @@ public class TrainPlayerCommand
 
         player.SkillLevel += training.SkillIncrease;
         player.FatigueLevel += training.FatigueIncrease;
-        player.StressLevel += training.StressIncrease;
 
         _context.SaveChanges();
     }
