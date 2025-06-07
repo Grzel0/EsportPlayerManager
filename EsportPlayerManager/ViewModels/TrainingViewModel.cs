@@ -24,7 +24,7 @@ namespace EsportPlayerManager.ViewModels
                 {
                     _playerId = value;
                     OnPropertyChanged();
-                    _trainPlayerCommand.RaiseCanExecuteChanged();  // <-- tutaj poprawka
+                    _trainPlayerCommand.RaiseCanExecuteChanged();
                 }
             }
         }
@@ -43,7 +43,7 @@ namespace EsportPlayerManager.ViewModels
             }
         }
 
-        private MyRelayCommand _trainPlayerCommand;   // alias użyty
+        private MyRelayCommand _trainPlayerCommand;
         public ICommand TrainPlayerCommand => _trainPlayerCommand;
 
         public TrainingViewModel()
