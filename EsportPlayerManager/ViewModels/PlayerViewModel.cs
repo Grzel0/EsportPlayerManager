@@ -57,6 +57,7 @@ public class PlayerViewModel : ReactiveObject
             SkillLevel = 0,
             StressLevel = 0,
             FatigueLevel = 0,
+            Money = 0,
         };
     }
 }

@@ -27,9 +27,11 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <StackPanel Orientation="Horizontal" Margin="0, 50, 0, 0">
-            <TextBlock Text="Enter player ID" Padding="0, 7, 0, 0"/><TextBox Margin="5, 0, 10, 0" Width="50"/>
-            <TextBlock Text="Enter tournament ID" Padding="0, 7, 0, 0"/><TextBox Margin="5, 0, 10, 0" Width="50"/>
-            <Button Content="Sign up player for tournament" Margin="10,0,0,0"></Button>
+            <TextBlock Text="Enter player ID" Padding="0, 7, 0, 0"/>
+            <TextBox x:Name="PlayerIdTextBox" Margin="5, 0, 10, 0" Width="50"/>
+            <TextBlock Text="Enter tournament ID" Padding="0, 7, 0, 0"/>
+            <TextBox x:Name="TournamentIdTextBox" Margin="5, 0, 10, 0" Width="50"/>
+            <Button Content="Sign up player for tournament" Margin="10,0,0,0" Click="OnJoinTournamentClicked" />
         </StackPanel>
     </StackPanel>
 </UserControl>

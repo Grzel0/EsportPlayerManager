@@ -9,5 +9,5 @@ public class Player
     public int? SkillLevel { get; set; }
     public int? StressLevel { get; set; }
     public int? FatigueLevel { get; set; }
-    
+    public int? Money { get; set; }
 }

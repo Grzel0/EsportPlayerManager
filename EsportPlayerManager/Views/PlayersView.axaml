@@ -27,6 +27,8 @@
             <NumericUpDown Value="{Binding NewPlayer.StressLevel, Mode=TwoWay}" Minimum="0" Maximum="100"/>
             <TextBlock Text="Fatigue" Padding="0, 7, 0, 0"/>
             <NumericUpDown Value="{Binding NewPlayer.FatigueLevel, Mode=TwoWay}" Minimum="0" Maximum="100"/>
+            <TextBlock Text="Money" Padding="0, 7, 0, 0"/>
+            <NumericUpDown Value="{Binding NewPlayer.Money, Mode=TwoWay}" Minimum="0" Maximum="100000"/>
             
         </StackPanel>
 
